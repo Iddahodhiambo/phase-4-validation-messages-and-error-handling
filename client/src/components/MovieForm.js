@@ -13,6 +13,7 @@ function MovieForm() {
     discount: false,
     female_director: false,
   });
+  const [errors, setErrors] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,9 +23,7 @@ function MovieForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((newMovie) => console.log(newMovie));
+    }).then((response) => console.log(response));
   }
 
   function handleChange(e) {
